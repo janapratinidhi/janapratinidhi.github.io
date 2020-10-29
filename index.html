@@ -85,6 +85,13 @@
               </a>
           </div>
       </nav>
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">जन प्रतिनिधिको सम्पर्क!</h1>
+          <p>यो वेबसाइट नेपाली जनतालाई जनप्रतिनिधिहरु सँग सम्पर्क गर्न सजिलो होस् भनेर बनाईएको हो। तपाईं यदि सहयोग गर्न इच्छुक हुनुहुन्छ भने यो फारम भर्नुहोस्।</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">सहभागी हुनुहोस् &raquo;</a></p>
+        </div>
+      </div>
       
       <div id="app">
       </div>
@@ -99,9 +106,7 @@
           placeholder="जन प्रतिनिधि सर्च गर्नुहोस"
           class="form-control bg-none border-1">
       </div>
-
       <div class="row">
-
         <div id="quotes" class="col-lg-9">
           <div v-for="quote in quotes" class="quote">
             <div class="quote-text">{{ quote.quote }}</div>
@@ -301,6 +306,10 @@
       }
 
     </script>
-
+      <footer class="footer">
+          <div class="container">
+              <span class="text-muted">Place sticky footer content here.</span>
+          </div>
+      </footer>
   </body>
 </html>
