@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nepal ka janapratinidhi ko samparka</title>
+    <title>जन प्रतिनिधि सम्पर्क</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="janasamparka-logo.png" sizes="16x16" type="image/png">
@@ -10,13 +10,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <meta property="og:url"                content="https://janapratinidhi.github.io/" />
-      <meta property="og:type"               content="website" />
-      <meta property="og:title"              content="आफ्नो प्रतिनिधिलाई पहुँच गर्नुहोस" />
-      <meta property="og:description"        content="नेपालका जनप्रतिनिधिको सम्पर्क नम्बरहरु" />
-      <meta property="og:image"              content="janapratinidhi-ko-samparka.png" />  
-
+    <meta property="og:url" content="https://janapratinidhi.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="आफ्नो प्रतिनिधिलाई पहुँच गर्नुहोस" />
+    <meta property="og:description" content="नेपालका जनप्रतिनिधिको सम्पर्क नम्बरहरु" />
+    <meta property="og:image" content="janapratinidhi-ko-samparka.png" />  
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
 
     <style>
@@ -77,6 +77,12 @@
       }
       #reset-filter:hover {
         color: #4477AA;
+      }
+      .darkmode--activated nav.bg-light {
+        background-color: #000 !important;
+      }
+      .darkmode--activated nav.bg-light a {
+        color: #fff;
       }
     </style>
   </head>
@@ -313,11 +319,20 @@
         authors.authors = authorList;
         tags.tags = tagList;
       }
+      function addDarkmodeWidget() {
+        const options = {
+          time: '0.5s',
+          label: '🌓'
+        }
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
 
     </script>
       <footer class="footer">
           <div class="container">
-              <span class="text-muted">यो जानकारीलाई गलत तरिकाले प्रयोग नगर्नुहोस्, कारवाही हुन सक्छ</span>
+              <span class="text-muted bold">यो जानकारीलाई गलत तरिकाले प्रयोग नगर्नुहोस्, कारवाही हुन सक्छ ।</span>
           </div>
       </footer>
   </body>
