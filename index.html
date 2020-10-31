@@ -78,6 +78,12 @@
       #reset-filter:hover {
         color: #4477AA;
       }
+      .darkmode--activated nav.bg-light {
+        background-color: #000 !important;
+      }
+      .darkmode--activated nav.bg-light a {
+        color: #fff;
+      }
     </style>
   </head>
 
@@ -313,6 +319,15 @@
         authors.authors = authorList;
         tags.tags = tagList;
       }
+      function addDarkmodeWidget() {
+        const options = {
+          time: '0.5s',
+          label: '🌓'
+        }
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
 
     </script>
       <footer class="footer">
