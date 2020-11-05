@@ -41,9 +41,10 @@
         font-size: 1.2em;
       }
       .author {
-        margin-left: 24px;
-        font-weight: bold;
+        margin-left: 4px;
+        font-weight: 400;
         color: #676767;
+        font-size: 14px;
       }
       .source {
         font-size: 0.8em;
@@ -84,6 +85,19 @@
       .darkmode--activated nav.bg-light a {
         color: #fff;
       }
+      p.call{
+      	float: left; margin-top: 0.5rem
+      }
+      p.call a.tag{
+      	background-color: #665CAC;
+      }
+      p.call a.tag:hover {
+     text-decoration: none;
+     color: rgb(255 255 255 / 0.7);
+	 }
+	 .darkmode--activated .quote-text {
+	     color: rgb(255 255 255 / 0.6);
+	 }
     </style>
   </head>
 
@@ -126,12 +140,19 @@
           <div v-for="quote in quotes" class="quote">
             <div class="quote-text">{{ quote.quote }}</div>
             <div>
-              <span class="author">- {{ quote.author}}</span>
+              <span class="author">{{ quote.author}}</span>
               <span class="source" v-if="quote.source != ''">
                   ({{ quote.source }})
                 </span>
             </div>
             <div class="tag-container">
+            	<p class="call">
+            		<a title="Message/Call on Viber" :href="`viber://chat?number=977${quote.source}&text=[Namaskar!]`" class="tag">
+            			<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            			  <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            			</svg>
+            		 Message/Call on Viber</a>
+            	</p>
               <span v-for="tag in quote.tags" class="tag">
                 {{ tag }}
               </span>
