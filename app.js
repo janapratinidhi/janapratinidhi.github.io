@@ -1,4 +1,4 @@
-d3.csv("movies.csv").then(function (data) {
+d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqo4yZyt40RdKCUJQgdm9GSH3SUXpPaw5reeWPaxcPG9T_5Fw5FYhMMb8mTfgfA_SjF9vIvhB_0dpS/pub?gid=0&single=true&output=csv").then(function (data) {
   // console.log(data);
 
   var movies = data;
